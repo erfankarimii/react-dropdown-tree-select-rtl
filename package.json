@@ -1,0 +1,171 @@
+{
+  "name": "react-dropdown-tree-select-rtl",
+  "version": "0.0.0-semantic-release",
+  "description": "Lightweight, customizable and fast Dropdown Tree Select component for React",
+  "keywords": [
+    "react",
+    "tree-select",
+    "dropdown",
+    "dropdown-tree-select",
+    "react-dropdown-tree-select",
+    "checkbox-tree",
+    "checkbox-select",
+    "checkbox-tree-select",
+    "checkbox-dropdown-tree-select",
+    "fast",
+    "customizable",
+    "lightweight",
+    "searchable",
+    "search"
+  ],
+  "main": "dist/react-dropdown-tree-select.js",
+  "types": "dist/react-dropdown-tree-select.d.ts",
+  "repository": "https://github.com/erfankarimii/react-dropdown-tree-select-rtl.git",
+  "author": "Erfan Karimi <erfankarimi287@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist/**/* && cross-env NODE_ENV=production webpack --config webpack.config.js --bail --mode=production",
+    "build:docs": "yarn build && cross-env NODE_ENV=production webpack --config docs/webpack.config.js --bail --mode=production",
+    "commit": "git-cz",
+    "coveralls": "yarn test && c8 report --reporter=text-lcov | coveralls",
+    "demo": "rimraf ./docs/bundle.js && webpack-serve --content ./docs --port 3000 --open --config docs/webpack.config.js",
+    "prepublishOnly": "yarn build",
+    "lint": "eslint --fix src docs webpack.config.js && stylelint --fix \"src/**/*.css\"",
+    "lint:nofix": "eslint src webpack.config.js && stylelint \"src/**/*.css\"",
+    "format": "prettier-eslint --write \"src/**/*.js\" \"docs/**/*.js\" webpack.config.js",
+    "test": "cross-env NODE_ENV=test c8 ava",
+    "test:cov": "yarn test && c8 --reporter=lcov report",
+    "test:watch": "cross-env NODE_ENV=test ava --watch",
+    "semantic-release": "semantic-release",
+    "contributors": "all-contributors add && all-contributors generate"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "array.partial": "^1.0.5",
+    "react-infinite-scroll-component": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-syntax-jsx": "7.0.0-beta.46",
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/register": "^7.17.7",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.0",
+    "all-contributors-cli": "^5.4.1",
+    "ava": "3",
+    "axe-core": "^3.2.2",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-istanbul": "4.1.3",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.13",
+    "c8": "^7.11.2",
+    "commitizen": "^2.9.6",
+    "conventional-changelog-cli": "^2.0.5",
+    "copy-webpack-plugin": "^5.0.1",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.0",
+    "cz-conventional-changelog-emoji": "^0.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "5.6.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-config-react-app": "3.0.8",
+    "eslint-plugin-flowtype": "2.50.3",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-react": "7.12.4",
+    "github-markdown-css": "^2.10.0",
+    "husky": "1.3.1",
+    "ignore-styles": "^5.0.1",
+    "jsdom": "^11.2.0",
+    "jsdom-global": "^3.0.2",
+    "lint-staged": "8.1.5",
+    "marked": "^0.3.17",
+    "mini-css-extract-plugin": "^0.4.0",
+    "postcss": "^6.0.16",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.10",
+    "postcss-nested": "^3.0.0",
+    "prettier": "1.16.4",
+    "prettier-eslint-cli": "^4.7.1",
+    "prettier-stylelint": "^0.4.2",
+    "prop-types": "^15.6.0",
+    "raw-loader": "^0.5.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-story": "^0.0.10",
+    "rimraf": "^2.6.1",
+    "sinon": "^5.0.0",
+    "style-loader": "^0.20.1",
+    "stylelint": "^9.0.0",
+    "stylelint-config-standard": "^18.0.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.6.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-serve": "^1.0.2",
+    "why-did-you-update": "^0.1.1"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17"
+  },
+  "ava": {
+    "files": [
+      "src/**/*.test.js"
+    ],
+    "require": [
+      "@babel/register",
+      "ignore-styles",
+      "jsdom-global/register",
+      "./setupEnzyme"
+    ],
+    "snapshotDir": "__snapshots__"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog-emoji"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts}": [
+      "prettier --write",
+      "git add -f"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "comment": "This is for semantic-release configuration",
+    "branches": [
+      "main"
+    ]
+  }
+}
