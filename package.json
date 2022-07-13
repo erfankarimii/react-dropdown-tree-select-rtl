@@ -1,5 +1,5 @@
 {
-  "name": "react-dropdown-tree-select-rtl",
+  "name": "react-dropdown-tree-select-rtl-er",
   "version": "0.0.0-semantic-release",
   "description": "Lightweight, customizable and fast Dropdown Tree Select component for React",
   "keywords": [
@@ -22,7 +22,7 @@
   "types": "dist/react-dropdown-tree-select.d.ts",
   "repository": "https://github.com/erfankarimii/react-dropdown-tree-select-rtl.git",
   "author": "Erfan Karimi <erfankarimi287@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "build": "rimraf dist/**/* && cross-env NODE_ENV=production webpack --config webpack.config.js --bail --mode=production",
     "build:docs": "yarn build && cross-env NODE_ENV=production webpack --config docs/webpack.config.js --bail --mode=production",
