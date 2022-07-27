@@ -21,7 +21,7 @@
 
         &.bottom::after {
           content: '\2304';
-          vertical-align: middle;
+          vertical-align: top;
           color: #3c3c3c;
           margin-right: 2px;
           font-size: 17px;
@@ -30,7 +30,7 @@
 
         &.top::after {
           content: '\2303';
-          vertical-align: middle;
+          vertical-align: bottom;
           color: #3c3c3c;
           margin-right: 2px;
           font-size: 17px;
